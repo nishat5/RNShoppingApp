@@ -5,6 +5,7 @@ import { userNotification } from './src/Notification/useNotification';
 // create a component
 const App = () => {
   userNotification(); //function for enabling and getting permission firbase cloud messaging (FCM)
+  //just trying to update my code to github
   return (
     <ContextWrapper>
       <AppContent />
