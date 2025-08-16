@@ -1,28 +1,16 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import AppContent from './src/AppContent/AppContent';
+import { ContextWrapper } from './src/context/ContextWrapper';
+import { userNotification } from './src/Notification/useNotification';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
+// create a component
+const App = () => {
+  userNotification(); //function for enabling and getting permission firbase cloud messaging (FCM)
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+    <ContextWrapper>
+      <AppContent />
+    </ContextWrapper>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
+//make this component available to the app
 export default App;
